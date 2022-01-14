@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#heading{
+    text-align: center;
+    margin: 10px;
+}
+.box_container{
+    display: inline-flex;
+}
+#box1,#box2,#box3{
+    height : 200px;
+    width : 300px;
+    background : lightblue;
+    border: solid 1px;
+    margin: 10px;
+    border-radius: 35px;
+}

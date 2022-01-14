@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+#heading{
+    text-align: center;
+    margin: 10px;
+}
+.box_container{
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.box{
+    height : 200px;
+    width : 200px;
+    background : lightblue;
+    border: solid 1px black;
+    border-radius: 35px;
+}
