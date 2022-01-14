@@ -32,5 +32,9 @@ def sayName(name):
 def repeat(repeat_num,repeat_string):
         return (repeat_string[0].upper()+repeat_string[1:]+" ")*repeat_num
 
+@app.errorhandler(404)
+def error_handler(e):
+    return "Sorry! No response. Try again."
+
 if __name__=="__main__":     
     app.run(debug=True) 
