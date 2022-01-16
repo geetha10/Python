@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="default.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='my_solution.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div id=container>
+        <h1 id=heading>**** Checkerboard ****</h1>        
+        <div id=board_container>
+            {% for i in range(8) %}
+                {% if i%2 == 0 %}
+                    {% for j in range(8) %}
+                    <div >
+                        {% if j%2 == 0 %}
+                        <p class="even_box"></p> 
+                        {% else %}
+                        <p class="odd_box"></p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    {% for j in range(8) %}
+                    <div >
+                        {% if j%2 == 0 %}
+                        <p class="odd_box"></p> 
+                        {% else %}
+                        <p class="even_box"></p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

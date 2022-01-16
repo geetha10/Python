@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+#heading{
+    text-align: center;
+    padding: 10px;
+    background-color: darkkhaki;
+    margin: 20px 0;
+}
+
+#board_container{
+    height: fit-content;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.even_box,
+.odd_box{
+    height: 50px;
+    width: 50px;
+}
+
+.odd_box{
+    background-color: lightblue;
+}
+
+.even_box{
+    background-color: lightcoral;
+}
