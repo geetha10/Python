@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
+.table_head{
+    background-color: brown;
+    color: white;
+    margin: 20px 0;
+}
