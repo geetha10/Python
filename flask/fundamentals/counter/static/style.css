@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.header{
+    text-align: center;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+}
+
+.display_count{
+    text-align: center;
+    margin: 40px 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.click_btn,.reset_btn{
+    padding: 10px;
+    background-color: cadetblue;
+    border-radius: 10px;
+    border: black solid 2px;
+}

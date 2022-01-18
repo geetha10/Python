@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div id=container>
+        <h1 class=header>Counter</h1>
+        <p class=display_count>{{session['count']}}</p>
+        <div class="buttons">
+            <form action='/counter'>
+                <button class=click_btn>click</button>
+            </form>
+            <form action='/destroy_session'>
+                <button class=reset_btn>Reset</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

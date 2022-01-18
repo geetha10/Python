@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='summary.css')}}">
+    <title>Survey Summary</title>
+</head>
+<body>
+    <div id=container>
+        <h1>Submitted Info</h1>
+        <p>Name: {{session.get('user_name')}}</p>
+        <p>Dojo Location: {{session.get('user_location')}}</p>
+        <p>Fav Lang: {{session.get('user_fav_lang')}}</p>
+        <p>Comment: {{session.get('user_comments')}}</p>
+    </div>
+</body>
+</html>
