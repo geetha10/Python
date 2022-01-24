@@ -1,8 +1,9 @@
 # import the function that will return an instance of a connection
+from flask import redirect
 from mysqlconnection import connectToMySQL
 # model the class after the friend table from our database
 class User:
-    def __init__( self , data ):
+    def __init__( self , data):
         self.id = data['id']
         self.first_name = data['first_name']
         self.last_name = data['last_name']
@@ -21,9 +22,30 @@ class User:
         for user in results:
             users.append( cls(user) )
         return users
-    
+
     @classmethod
-    def save(cls, data ):
+    def save_new_user(cls, data ):
         query = "INSERT INTO users ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(email)s , NOW() , NOW() );"
         # data is a dictionary that will be passed into the save method from server.py
-        return connectToMySQL('users').query_db( query, data )
+        return connectToMySQL('users').query_db(query, data )
+
+    @classmethod
+    def get_user_info_by_id(cls,id):
+        query = "SELECT * FROM users where id=%(id)s;"
+        data={'id':id}
+        user = connectToMySQL('users').query_db(query,data)
+        print("In User.py",str(user))
+        return user[0]
+    
+    @classmethod
+    def update_user(cls,data):
+        query="UPDATE users SET first_name = %(fname)s, last_name = %(lname)s, email=%(email)s WHERE id=%(id)s"
+        result = connectToMySQL('users').query_db(query,data)
+        return True
+
+    @classmethod
+    def delete_user(cls,id):
+        query ="Delete from users where id=%(id)s"
+        data={'id':id}
+        connectToMySQL('users').query_db(query,data)
+        return True
