@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 320px;
+    margin: 0 auto;
+    background-color: burlywood;
+}
+
+form{
+    margin-left: 15px;
+}
+
+p{
+    padding: 5px 0;
+}
+
+input{
+    font-size: 20px;
+    border-radius: 5px;
+}
+select{
+    padding: 5px 0;
+}
+
+.submit_btn{
+    text-align: center;
+    padding: 5px;
+    margin: 10px 0;
+}
+.comments{
+    height: 200px;
+}
