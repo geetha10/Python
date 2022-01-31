@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Recipe APP</title>
+</head>
+<!-- /recipes/add/{{user.id}} -->
+<body>
+    <div id="container col-10  mt-3 align-items-center">
+        <div class="d-flex justify-content-between align-items-center" id="nav_bar">
+            <h1 class="col-6 text-center">Welcome {{user.first_name}}</h1>
+            <div class="col-4">
+                <a href="/recipes/new" class="btn btn-info btn-primary">Add New Recipe</a>
+                <a href="/logout" class="btn btn-info btn-primary">Logout</a>
+            </div>
+        </div>
+        <div id="contents" class="col-10 align-items-center">
+            <h2 class="mt-5 text-center">List of recipes from DB</h2>
+            <div class="table-responsive">
+                <table  class="table table-bordered table-hover text-center mx-auto w-auto">
+                    <tr>
+                        <thead>
+                            <th scope="col">Name</th>
+                            <th scope="col">Under 30 Minutes</th>
+                            <th scope="col">Actions</th>
+                        </thead>
+                        <tbody>
+                            {% for recipe in recipes%}
+                                <tr>
+                                    <td>{{recipe.name}}</td>
+                                    <td>{{recipe.under30}}</td>
+                                    <td>
+                                        <a href="/recipes/view/{{recipe.id}}">View </a><span> | </span>
+                                        <a href="/recipes/edit/{{recipe.id}}">Edit </a><span> | </span>
+                                        <a href="/recipes/delete/{{recipe.id}}">Delete</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>

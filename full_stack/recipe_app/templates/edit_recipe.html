@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Recipe APP</title>
+</head>
+<body>
+    <div id="container col-10  mt-3 align-items-center">
+        <div class="d-flex justify-content-between align-items-center" id="nav_bar">
+            <h1 class="col-6 text-center">Update Recipe</h1>
+            <div class="col-4">
+                <a href="/dashboard" class="btn btn-info btn-primary">Dashboard</a>
+                <a href="/logout" class="btn btn-info btn-primary">Logout</a>
+            </div>
+        </div>
+        <div id=recipe_details class="col-md-8 offset-md-2">
+            <form action="/recipes/update/{{recipe.id}}" method="post"> 
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" name="name" type="text" value={{recipe.name}}>
+                </div class="form-group">
+                <div class="form-group">
+                    <label for="description" >Description</label>
+                    <textarea class="form-control" name="description" type="text">{{recipe.description}}</textarea>
+                    <!-- <input class="form-control" name="description" type="text" value={{recipe.description}}> -->
+                </div>
+                <div class="form-group">
+                    <label for="instructions">Instructions</label>
+                    <textarea  class="form-control" cols="30" rows="5" name="instructions" type="text">{{recipe.instructions}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Date_Made_On">Date Made On</label>
+                    <input  class="form-control" name="date_made" type="date" value={{recipe.date_made.strftime('%Y-%m-%d')}}>
+                </div>
+                <div class="form-check form-check-inline"> 
+                    <label for="under30" class="form-check-label">Under 30</label>
+                    {{if }}
+                    <input for="under30" class="form-check-input" type="radio" name="under30" value="yes">Yes</input>
+                    <input for="under30" class="form-check-input" type="radio" name="under30" value="no">No</input>
+                </div>
+                <p class="text-center">
+                    <input type="submit" value="Update Recipe" class="btn btn-primary">
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
